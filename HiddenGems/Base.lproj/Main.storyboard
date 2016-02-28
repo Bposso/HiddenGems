@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gZI-EQ-yvN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Hidden Gems-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HiddenGems" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,121 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynn-t7-xcS">
+                                <rect key="frame" x="183" y="497" width="235" height="62"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="3Wy-V0-3GO"/>
+                                    <constraint firstAttribute="height" constant="62" id="o2N-cg-40L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="32"/>
+                                <state key="normal" title="Explore">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bcG-nh-YjO" kind="show" id="d7P-5N-8Lo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ynn-t7-xcS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDu-1a-c18"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ynn-t7-xcS" secondAttribute="bottom" constant="41" id="aSt-WE-7ig"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Hidden Gems" id="3e0-kV-02q">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="QM5-77-WGJ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="563" y="129"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="wGX-Lc-yfT">
+            <objects>
+                <viewController id="bcG-nh-YjO" customClass="MapViewController" customModule="HiddenGems" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n2q-hk-8ND"/>
+                        <viewControllerLayoutGuide type="bottom" id="iUs-n5-AWZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Two-lY-ERp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="znU-3y-DII">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvf-vA-pFx">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="XAD-Xt-Y8S">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I6z-fP-SeA">
+                                            <rect key="frame" x="20" y="7" width="89" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Set radius"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="arN-tj-cLh"/>
+                                    <barButtonItem style="plain" id="70I-MG-Kju">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="1000" maxValue="5000" id="Ew1-GD-pAK">
+                                            <rect key="frame" x="231" y="7" width="138" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="setARadius:" destination="bcG-nh-YjO" eventType="valueChanged" id="vaM-tC-mj4"/>
+                                            </connections>
+                                        </slider>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Urw-0s-lxL"/>
+                                    <barButtonItem style="plain" id="YHF-vB-Wgr">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000.0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Q9D-NM-Qoq">
+                                            <rect key="frame" x="516" y="7" width="64" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="znU-3y-DII" secondAttribute="trailing" id="97j-4q-qaD"/>
+                            <constraint firstItem="zvf-vA-pFx" firstAttribute="leading" secondItem="znU-3y-DII" secondAttribute="leading" id="DbZ-QN-GVC"/>
+                            <constraint firstItem="znU-3y-DII" firstAttribute="bottom" secondItem="iUs-n5-AWZ" secondAttribute="top" id="ED4-Ve-MBS"/>
+                            <constraint firstItem="zvf-vA-pFx" firstAttribute="bottom" secondItem="iUs-n5-AWZ" secondAttribute="top" id="RAa-73-kCB"/>
+                            <constraint firstItem="zvf-vA-pFx" firstAttribute="trailing" secondItem="znU-3y-DII" secondAttribute="trailing" id="SLb-wD-rvj"/>
+                            <constraint firstItem="znU-3y-DII" firstAttribute="leading" secondItem="Two-lY-ERp" secondAttribute="leading" id="WXf-mw-geC"/>
+                            <constraint firstItem="znU-3y-DII" firstAttribute="top" secondItem="n2q-hk-8ND" secondAttribute="bottom" constant="-64" id="ZjF-hv-Okk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="znU-3y-DII" id="3Zc-8O-0yt"/>
+                        <outlet property="radiusText" destination="Q9D-NM-Qoq" id="Ixo-dy-qwG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJF-hK-MTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="218" y="814"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="scw-Yt-0Z7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gZI-EQ-yvN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dx8-Gq-TUf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1hd-ei-obm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paY-Xx-x7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="129"/>
         </scene>
     </scenes>
 </document>
